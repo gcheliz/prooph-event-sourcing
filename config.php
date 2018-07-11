@@ -22,6 +22,7 @@ namespace {
     use Prooph\ServiceBus\Plugin\Router\CommandRouter;
     use Prooph\ServiceBus\Plugin\Router\EventRouter;
     use Prooph\SnapshotStore\Pdo\PdoSnapshotStore;
+    use Ramsey\Uuid\Uuid;
 
     include "./vendor/autoload.php";
 
@@ -51,5 +52,6 @@ namespace {
     $eventRouter->route(UserRegistered::class)->to([$userProjector, 'onUserRegistered']);
     $eventRouter->attachToMessageBus($eventBus);
 
-    $userId = '20';
+    $userId = '5e3b1166-84f3-44c9-a36f-82c409b65c4c';
+    $userId2 = 'dea59325-ad22-4d00-a233-0f1f42611e01';
 }
